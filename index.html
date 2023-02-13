@@ -12,7 +12,7 @@
     <h1 class="centered">hw-04: Event Handling</h1>
     <div id="columns">
         <div id="left-column">
-            <svg height="500" width="60%">
+            <svg height="500" width="60%" id="plot">
                 <line class="axis" x1="0" y1="0" x2="0" y2="100%"/>
                 <line class="axis" x1="0" y1="100%" x2="100%" y2="100%"/>
                 <circle class="point" cx="10%" cy="80%" r="10"></circle>
@@ -22,6 +22,36 @@
             </svg>
         </div>
         <div id="right-column">
+            <p id="last-clicked"></p>
+            <form>
+                <label for="x-value">Select x-coordinate:</label>
+                <select name="x-value" id="x-value">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <br><br>
+                <label for="y-value">Select y-coordinate:</label>
+                <select name="y-value" id="y-value">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <br><br>
+                <button type="button" id="submit-button">Add point</button>
+            </form>
         </div>
     </div>
     <div>
@@ -39,6 +69,7 @@
             <li>
                 <a href="https://stackoverflow.com/questions/56763768/is-there-any-way-to-add-an-event-listener-to-a-class">Highlight Each Point</a>
             </li>
+            <!-- https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select -->
         </ul>
     </div>
     <script src="main.js"></script>
