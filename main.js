@@ -1,6 +1,11 @@
 function hoverHighlight(point) {
     point.classList.toggle("highlight");
+}
 
+function addListeners(point) {
+    point.addEventListener("mouseover", () => hoverHighlight(point));
+    point.addEventListener("mouseout", () => hoverHighlight(point));
+    point.addEventListener("click", () => clickPoint(point));
 }
 
 function clickPoint(point) {
@@ -14,9 +19,7 @@ function clickPoint(point) {
 let points = Array.from(document.querySelectorAll(".point"));
 
 points.forEach((point) => {
-    point.addEventListener("mouseover", () => hoverHighlight(point));
-    point.addEventListener("mouseout", () => hoverHighlight(point));
-    point.addEventListener("click", () => clickPoint(point));
+    addListeners(point);
 });
 
 function addPoint() {
@@ -32,6 +35,7 @@ function addPoint() {
     circle.setAttribute("cx", xValue);
     circle.setAttribute("cy", yValue);
     circle.setAttribute("r", 10);
+    addListeners(circle);
     plot.appendChild(circle);
 }
 
